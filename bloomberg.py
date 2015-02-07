@@ -8,6 +8,24 @@ from pprint import pprint
 
 groceryList = [
         "APD EGGS INDEX",
+        "APD WHET INDEX",
+        # "APD GBEF INDEX",
+        # "APD BRBL INDEX",
+        # "APD CABB INDEX",
+        # "APD BANA INDEX",
+        # "APD BEAN INDEX",
+        # "APD CCHS INDEX",
+        # "APD ROMA INDEX",
+        # "APD BACO INDEX",
+        # "APD CHIC INDEX",
+        # "APD BACO INDEX",
+        # "APD COFF INDEX",
+        # "APD RICE INDEX",
+        # "APD MILK INDEX",
+        # "APD WHIT INDEX",
+        # "APD PB INDEX",
+        # "APD BHAM INDEX",
+        "APD BRSK INDEX"
         ]
 
 
