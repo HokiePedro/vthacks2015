@@ -15,7 +15,7 @@ apiEndpoint = "https://http-api.openbloomberg.com/"
 thingie = "/request/blp/refdata/HistoricalData"
 body = { "securities": groceryList, 
   "fields": ["PX_LAST", "OPEN"],
-  "startDate": "20120101",
+  "startDate": "20140101",
   "endDate": "20150105",
   "periodicitySelection": "MONTHLY" } 
 parser = argparse.ArgumentParser()
@@ -32,4 +32,11 @@ res = urllib2.urlopen(req, data=json.dumps(body), context=ctx)
 
 test = json.loads(res.read())
 
-print test["data"]["securityData"]
+diction = {}
+print test
+print "\n"
+a = test["data"][0]["securityData"]["security"]
+b = test["data"][0]["securityData"]["fieldData"][0]["PX_LAST"]
+
+diction[a] = b 
+print diction
