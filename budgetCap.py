@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+#from flask import Flask,render_template,request
 import requests
 import json
 
@@ -60,16 +60,16 @@ def accountTotals():
   
   print "\n"
   print "Remaining Amount for each account after bills"
-  print acct1Total
-  print acct2Total
-  return acct3Total
+
+  acctTotal = []
+  acctTotal.append(acct1Total)
+  acctTotal.append(acct2Total)
+  acctTotal.append(acct3Total)
+  return acctTotal
   
   #given final amounts provide reasonable grocery list/budget of each account for possible spending and saving techniques
   #say each person may have personal money for random events/food/emergency/etc
   #this is where I guess Bloombergs API comes in generates these things for each account
-
-
-
 
 app_lulu = Flask(__name__)
 
@@ -97,3 +97,4 @@ def index_lulu():
 
 if __name__ == "__main__":
     app_lulu.run(debug=True)
+
