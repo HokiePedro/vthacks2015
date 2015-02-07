@@ -13,3 +13,8 @@ reqString = ('http://api.reimaginebanking.com/customers/'+ id1 +'/accounts?key='
 req = requests.post(reqString, headers={"content-type":"application/json"}, data=json.dumps(body))
 print req.text
 
+
+
+
+
+#print req.status_cod
