@@ -9,7 +9,21 @@ id3 = '54b604dfa520e02948a0f50b'
 
 body = {"type": "checking", "nickname": "Pedro", "rewards": 10, "balance": 20}
 
-reqString = ('http://api.reimaginebanking.com/customers/'+ id1 +'/accounts?key=' + custKey)
-req = requests.post(reqString, headers={"content-type":"application/json"}, data=json.dumps(body))
+reqString = ('http://api.reimaginebanking.com/accounts?key=' + custKey)
+
+
+#req = requests.post(reqString, headers={"content-type":"application/json"}, data=json.dumps(body))
+req = requests.get(reqString)
 print req.text
+
+#name = req.json()[0]["nickname"]
+#if name == "fjjfjf":
+#	print "ok"
+	
+
+
+
+
+
+#print req.status_cod
 
