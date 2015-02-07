@@ -1,4 +1,4 @@
-#from flask import Flask,render_template,request
+from flask import Flask,render_template,request
 import requests
 import json
 
@@ -58,9 +58,6 @@ def accountTotals():
   acct2Total = acct2Total - moneyVal2.json()[0]["payment amount"]
   acct3Total = acct3Total - moneyVal3.json()[0]["payment amount"]
   
-  print "\n"
-  print "Remaining Amount for each account after bills"
-
   acctTotal = []
   acctTotal.append(acct1Total)
   acctTotal.append(acct2Total)
@@ -71,6 +68,9 @@ def accountTotals():
   #say each person may have personal money for random events/food/emergency/etc
   #this is where I guess Bloombergs API comes in generates these things for each account
 
+
+
+
 app_lulu = Flask(__name__)
 
 app_lulu.vars={}
@@ -78,10 +78,10 @@ app_lulu.vars={}
 @app_lulu.route('/index',methods=['GET','POST'])
 def index_lulu():
     nquestions=5
-    accountTotal=accountTotals()
+    accountTotalOne=accountTotals()[1]
 
     if request.method == 'GET':
-      return render_template('userinfo_lulu.html',num=nquestions, account=accountTotal)
+      return render_template('userinfo_lulu.html',num=nquestions, account=accountTotalOne)
     else:
         #request was a POST
         app_lulu.vars['name'] = request.form['name_lulu']
@@ -97,4 +97,3 @@ def index_lulu():
 
 if __name__ == "__main__":
     app_lulu.run(debug=True)
-
