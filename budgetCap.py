@@ -96,8 +96,4 @@ def index_lulu():
     ans2='2',ans3='3')
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     app_lulu.run(debug=True)
-=======
-    app_lulu.run(debug=True)
->>>>>>> 59d4fd0257fc11a99d7dcafb61bdcd16a45735cc
