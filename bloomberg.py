@@ -7,8 +7,7 @@ import sys
 from pprint import pprint
 
 groceryList = [
-        "APD EGGS",
-        "APD EGGS"
+        "APD EGGS INDEX",
         ]
 
 
@@ -17,8 +16,8 @@ thingie = "/request/blp/refdata/HistoricalData"
 body = { "securities": groceryList, 
   "fields": ["PX_LAST", "OPEN"],
   "startDate": "20120101",
-  "endDate": "20120105",
-  "periodicitySelection": "DAILY" } 
+  "endDate": "20150105",
+  "periodicitySelection": "MONTHLY" } 
 parser = argparse.ArgumentParser()
 parser.add_argument('host', type=str)
 parser.parse_args()
@@ -31,7 +30,6 @@ ctx.load_cert_chain('vthacks_spring_2015_018.crt', 'vthacks_spring_2015_018.key'
 
 res = urllib2.urlopen(req, data=json.dumps(body), context=ctx)
 
-pprint(res.read())
+test = json.loads(res.read())
 
-
-
+print test["data"]["securityData"]
