@@ -19,31 +19,35 @@ def accountTotals():
   print accountData.text
   print "\n"
   
+  acctTotal = []
   #doing calculations for how budget is;I figure its total amount in bank (savings+checking) then
   #subtract their recuring bills for like say rent, then also subtract a standard amount of living is
   #for one person in this case
   
   for index in accountData.json():
-  	if(index["nickname"] == "Denny"):
-  		if(index["type"] == "checking"):
-  			acct1Total = acct1Total + index["balance"]
-  			billAcct1 = ('http://api.reimaginebanking.com/accounts/' + index["_id"] + '/bills?key=' + custKey)
-  		else:
-  			acct1Total = acct1Total + index["balance"]
+    if(index["nickname"] == "Denny"):
+        acctTotal.append(index["nickname"])
+        if(index["type"] == "checking"):
+            acct1Total = acct1Total + index["balance"]
+            billAcct1 = ('http://api.reimaginebanking.com/accounts/' + index["_id"] + '/bills?key=' + custKey)
+        else:
+            acct1Total = acct1Total + index["balance"]
   
-  	if(index["nickname"] == "Pedro"):
-  		if(index["type"] == "checking"):
-  			acct2Total = acct2Total + index["balance"]
-  			billAcct2 = ('http://api.reimaginebanking.com/accounts/' + index["_id"] + '/bills?key=' + custKey)
-  		else:
-  			acct2Total = acct2Total + index["balance"]
+    if(index["nickname"] == "Pedro"):
+        acctTotal.append(index["nickname"])
+        if(index["type"] == "checking"):
+            acct2Total = acct2Total + index["balance"]
+            billAcct2 = ('http://api.reimaginebanking.com/accounts/' + index["_id"] + '/bills?key=' + custKey)
+        else:
+            acct2Total = acct2Total + index["balance"]
   
-  	if(index["nickname"] == "Steven"):
-  		if(index["type"] == "checking"):
-  			acct3Total = acct3Total + index["balance"]
-  			billAcct3 = ('http://api.reimaginebanking.com/accounts/' + index["_id"] + '/bills?key=' + custKey)
-  		else:
-  			acct3Total = acct3Total + index["balance"]
+    if(index["nickname"] == "Steven"):
+        acctTotal.append(index["nickname"])
+        if(index["type"] == "checking"):
+            acct3Total = acct3Total + index["balance"]
+            billAcct3 = ('http://api.reimaginebanking.com/accounts/' + index["_id"] + '/bills?key=' + custKey)
+        else:
+            acct3Total = acct3Total + index["balance"]
   
   print acct1Total
   print acct2Total
@@ -58,7 +62,6 @@ def accountTotals():
   acct2Total = acct2Total - moneyVal2.json()[0]["payment amount"]
   acct3Total = acct3Total - moneyVal3.json()[0]["payment amount"]
   
-  acctTotal = []
   acctTotal.append(acct1Total)
   acctTotal.append(acct2Total)
   acctTotal.append(acct3Total)
@@ -78,10 +81,12 @@ app_lulu.vars={}
 @app_lulu.route('/index',methods=['GET','POST'])
 def index_lulu():
     nquestions=5
-    accountTotalOne=accountTotals()[1]
+    tot=accountTotals()
+    print tot
+    accountTotalOne=tot[7]
 
     if request.method == 'GET':
-      return render_template('userinfo_lulu.html',num=nquestions, account=accountTotalOne)
+      return render_template('steven.html',num=nquestions, account=accountTotalOne, Person=tot[0],)
     else:
         #request was a POST
         app_lulu.vars['name'] = request.form['name_lulu']
