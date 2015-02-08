@@ -1,58 +1,262 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<style>
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: 960px;
-  height: 500px;
-  position: relative;
-}
-path.slice{
-	stroke-width:2px;
-}
-polyline{
-	opacity: .3;
-	stroke: black;
-	stroke-width: 2px;
-	fill: none;
-} 
-svg text.percent{
-	fill:white;
-	text-anchor:middle;
-	font-size:12px;
-}
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-</style>
 <body>
-<button onClick="changeData()">Change Data</button>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="Donut3D.js"></script>
-<script>
+	<div id="wrapper">
+	<header id="header">
+	<section id="example">
+	<div class="container">	
+		<form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+		<fieldset>
+			<div class="names">
+				MILK
+			</div>
+			<input type="hidden" name="cmd" value="_cart">
+			<input type="hidden" name="add" value="1">
+			<input type="hidden" name="business" value="">
+			<input type="hidden" name="item_name" value="Milk">
+			<input type="hidden" name="item_number" value="123">
+			<input type="hidden" name="amount" value="4.20">
+			<input type="hidden" name="shipping" value="1.00">
+			<input type="hidden" name="shipping2" value="0.50">
+			<input type="hidden" name="handling" value="2.00 ">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="return" value="">
+			<input type="hidden" name="undefined_quantity" value="1">
+			<input type="image" src="http://i.imgur.com/zZ6lVrI.png" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+		</fieldset>
+		</form>
 
-var salesData=[
-	{label:"Basic", color:"#3366CC"},
-	{label:"Plus", color:"#DC3912"},
-	{label:"Lite", color:"#FF9900"},
-	{label:"Elite", color:"#109618"},
-	{label:"Delux", color:"#990099"}
-];
 
-var svg = d3.select("body").append("svg").attr("width",700).attr("height",300);
+				<form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+		<fieldset>
+			<div class="names">
+				MILK
+			</div>
+			<input type="hidden" name="cmd" value="_cart">
+			<input type="hidden" name="add" value="1">
+			<input type="hidden" name="business" value="">
+			<input type="hidden" name="item_name" value="Milk">
+			<input type="hidden" name="item_number" value="123">
+			<input type="hidden" name="amount" value="4.20">
+			<input type="hidden" name="shipping" value="1.00">
+			<input type="hidden" name="shipping2" value="0.50">
+			<input type="hidden" name="handling" value="2.00 ">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="return" value="">
+			<input type="hidden" name="undefined_quantity" value="1">
+			<input type="image" src="http://i.imgur.com/zZ6lVrI.png" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+		</fieldset>
+		</form>
 
-svg.append("g").attr("id","salesDonut");
-svg.append("g").attr("id","quotesDonut");
+				<form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+		<fieldset>
+			<div class="names">
+				MILK
+			</div>
+			<input type="hidden" name="cmd" value="_cart">
+			<input type="hidden" name="add" value="1">
+			<input type="hidden" name="business" value="">
+			<input type="hidden" name="item_name" value="Milk">
+			<input type="hidden" name="item_number" value="123">
+			<input type="hidden" name="amount" value="4.20">
+			<input type="hidden" name="shipping" value="1.00">
+			<input type="hidden" name="shipping2" value="0.50">
+			<input type="hidden" name="handling" value="2.00 ">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="return" value="">
+			<input type="hidden" name="undefined_quantity" value="1">
+			<input type="image" src="http://i.imgur.com/zZ6lVrI.png" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+		</fieldset>
+		</form>
 
-Donut3D.draw("salesDonut", randomData(), 150, 150, 130, 100, 30, 0.4);
-Donut3D.draw("quotesDonut", randomData(), 450, 150, 130, 100, 30, 0);
+				<form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+		<fieldset>
+			<div class="names">
+				MILK
+			</div>
+			<input type="hidden" name="cmd" value="_cart">
+			<input type="hidden" name="add" value="1">
+			<input type="hidden" name="business" value="">
+			<input type="hidden" name="item_name" value="Milk">
+			<input type="hidden" name="item_number" value="123">
+			<input type="hidden" name="amount" value="4.20">
+			<input type="hidden" name="shipping" value="1.00">
+			<input type="hidden" name="shipping2" value="0.50">
+			<input type="hidden" name="handling" value="2.00 ">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="return" value="">
+			<input type="hidden" name="undefined_quantity" value="1">
+			<input type="image" src="http://i.imgur.com/zZ6lVrI.png" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+		</fieldset>
+		</form>
+
+				<form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+		<fieldset>
+			<div class="names">
+				MILK
+			</div>
+			<input type="hidden" name="cmd" value="_cart">
+			<input type="hidden" name="add" value="1">
+			<input type="hidden" name="business" value="">
+			<input type="hidden" name="item_name" value="Milk">
+			<input type="hidden" name="item_number" value="123">
+			<input type="hidden" name="amount" value="4.20">
+			<input type="hidden" name="shipping" value="1.00">
+			<input type="hidden" name="shipping2" value="0.50">
+			<input type="hidden" name="handling" value="2.00 ">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="return" value="">
+			<input type="hidden" name="undefined_quantity" value="1">
+			<input type="image" src="http://i.imgur.com/zZ6lVrI.png" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+		</fieldset>
+		</form>
+
+				<form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+		<fieldset>
+			<div class="names">
+				MILK
+			</div>
+			<input type="hidden" name="cmd" value="_cart">
+			<input type="hidden" name="add" value="1">
+			<input type="hidden" name="business" value="">
+			<input type="hidden" name="item_name" value="Milk">
+			<input type="hidden" name="item_number" value="123">
+			<input type="hidden" name="amount" value="4.20">
+			<input type="hidden" name="shipping" value="1.00">
+			<input type="hidden" name="shipping2" value="0.50">
+			<input type="hidden" name="handling" value="2.00 ">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="return" value="">
+			<input type="hidden" name="undefined_quantity" value="1">
+			<input type="image" src="http://i.imgur.com/zZ6lVrI.png" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+		</fieldset>
+		</form>
+
+				<form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+		<fieldset>
+			<div class="names">
+				MILK
+			</div>
+			<input type="hidden" name="cmd" value="_cart">
+			<input type="hidden" name="add" value="1">
+			<input type="hidden" name="business" value="">
+			<input type="hidden" name="item_name" value="Milk">
+			<input type="hidden" name="item_number" value="123">
+			<input type="hidden" name="amount" value="4.20">
+			<input type="hidden" name="shipping" value="1.00">
+			<input type="hidden" name="shipping2" value="0.50">
+			<input type="hidden" name="handling" value="2.00 ">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="return" value="">
+			<input type="hidden" name="undefined_quantity" value="1">
+			<input type="image" src="http://i.imgur.com/zZ6lVrI.png" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+		</fieldset>
+		</form>
+
+				<form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+		<fieldset>
+			<div class="names">
+				MILK
+			</div>
+			<input type="hidden" name="cmd" value="_cart">
+			<input type="hidden" name="add" value="1">
+			<input type="hidden" name="business" value="">
+			<input type="hidden" name="item_name" value="Milk">
+			<input type="hidden" name="item_number" value="123">
+			<input type="hidden" name="amount" value="4.20">
+			<input type="hidden" name="shipping" value="1.00">
+			<input type="hidden" name="shipping2" value="0.50">
+			<input type="hidden" name="handling" value="2.00 ">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="return" value="">
+			<input type="hidden" name="undefined_quantity" value="1">
+			<input type="image" src="http://i.imgur.com/zZ6lVrI.png" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+		</fieldset>
+		</form>
+
+				<form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+		<fieldset>
+			<div class="names">
+				MILK
+			</div>
+			<input type="hidden" name="cmd" value="_cart">
+			<input type="hidden" name="add" value="1">
+			<input type="hidden" name="business" value="">
+			<input type="hidden" name="item_name" value="Milk">
+			<input type="hidden" name="item_number" value="123">
+			<input type="hidden" name="amount" value="4.20">
+			<input type="hidden" name="shipping" value="1.00">
+			<input type="hidden" name="shipping2" value="0.50">
+			<input type="hidden" name="handling" value="2.00 ">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="return" value="">
+			<input type="hidden" name="undefined_quantity" value="1">
+			<input type="image" src="http://i.imgur.com/zZ6lVrI.png" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+		</fieldset>
+		</form>
 	
-function changeData(){
-	Donut3D.transition("salesDonut", randomData(), 130, 100, 30, 0.4);
-	Donut3D.transition("quotesDonut", randomData(), 130, 100, 30, 0);
-}
+				<form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+		<fieldset>
+			<div class="names">
+				MILK
+			</div>
+			<input type="hidden" name="cmd" value="_cart">
+			<input type="hidden" name="add" value="1">
+			<input type="hidden" name="business" value="">
+			<input type="hidden" name="item_name" value="Milk">
+			<input type="hidden" name="item_number" value="123">
+			<input type="hidden" name="amount" value="4.20">
+			<input type="hidden" name="shipping" value="1.00">
+			<input type="hidden" name="shipping2" value="0.50">
+			<input type="hidden" name="handling" value="2.00 ">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="return" value="">
+			<input type="hidden" name="undefined_quantity" value="1">
+			<input type="image" src="http://i.imgur.com/zZ6lVrI.png" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+		</fieldset>
+		</form>
 
-function randomData(){
-	return salesData.map(function(d){ 
-		return {label:d.label, value:1000*Math.random(), color:d.color};});
-}
-</script>
+				<form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+		<fieldset>
+			<div class="names">
+				MILK
+			</div>
+			<input type="hidden" name="cmd" value="_cart">
+			<input type="hidden" name="add" value="1">
+			<input type="hidden" name="business" value="">
+			<input type="hidden" name="item_name" value="Milk">
+			<input type="hidden" name="item_number" value="123">
+			<input type="hidden" name="amount" value="4.20">
+			<input type="hidden" name="shipping" value="1.00">
+			<input type="hidden" name="shipping2" value="0.50">
+			<input type="hidden" name="handling" value="2.00 ">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="return" value="">
+			<input type="hidden" name="undefined_quantity" value="1">
+			<input type="image" src="http://i.imgur.com/zZ6lVrI.png" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+		</fieldset>
+		</form>
+	
+
+	</div>
+	</section>
+	</header>
+	</div>
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/minicart/3.0.5/minicart.min.js"></script>
+	<script>
+    	paypal.minicart.render();
+	</script>
+
+	<script>
+    	paypal.minicart.reset();
+	</script>
+
+
 </body>
+</html>
