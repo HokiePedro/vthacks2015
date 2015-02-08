@@ -58,11 +58,11 @@ def accountTotals():
   acct2Total = acct2Total - moneyVal2.json()[0]["payment amount"]
   acct3Total = acct3Total - moneyVal3.json()[0]["payment amount"]
   
-  print "\n"
-  print "Remaining Amount for each account after bills"
-  print acct1Total
-  print acct2Total
-  return acct3Total
+  acctTotal = []
+  acctTotal.append(acct1Total)
+  acctTotal.append(acct2Total)
+  acctTotal.append(acct3Total)
+  return acctTotal
   
   #given final amounts provide reasonable grocery list/budget of each account for possible spending and saving techniques
   #say each person may have personal money for random events/food/emergency/etc
@@ -78,10 +78,10 @@ app_lulu.vars={}
 @app_lulu.route('/index',methods=['GET','POST'])
 def index_lulu():
     nquestions=5
-    accountTotal=accountTotals()
+    accountTotalOne=accountTotals()[1]
 
     if request.method == 'GET':
-      return render_template('userinfo_lulu.html',num=nquestions, account=accountTotal)
+      return render_template('userinfo_lulu.html',num=nquestions, account=accountTotalOne)
     else:
         #request was a POST
         app_lulu.vars['name'] = request.form['name_lulu']
