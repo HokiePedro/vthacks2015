@@ -97,7 +97,9 @@ a:hover {
 
 #example form {
     float: left;
-    padding: 10px 10px 10px 15px;
+    padding: 10px 10px 10px 10px;
+    background-color: clear;
+    border: 2px;
 }
 
 #example form strong {
@@ -116,9 +118,14 @@ a:hover {
     height: 20px;
     margin: 0;
     padding: 10px;
-    background: #5a85ad;
+    background: #9ca7b0;
+
     border: 0;
     border-radius: 8px;
+}
+
+fieldset{
+    background-color: black;
 }
 
 #example fieldset .button {
@@ -147,6 +154,7 @@ a:hover {
 
 .names{
     text-align: center;
+    color: black;
 }
 
 @media only screen and (max-width : 568px) {
