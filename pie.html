@@ -6,9 +6,8 @@
 </head>
 
 <body>
-	<div id="wrapper">
-	<header id="header">
-	<section id="example">
+
+	<aside id="foodSection">
 	<div class="container">	
 		<form method="post" action="https://www.paypal.com/cgi-bin/webscr">
 		<fieldset>
@@ -321,13 +320,26 @@
 		</fieldset>
 		</form>
 
-
-
+			<form method="post" action="https://www.paypal.com/cgi-bin/webscr">
+		<fieldset>
+			<div class="names">
+				Eggs
+			</div>
+			<input type="hidden" name="cmd" value="_cart">
+			<input type="hidden" name="add" value="1">
+			<input type="hidden" name="business" value="">
+			<input type="hidden" name="item_name" value="eggs">
+			<input type="hidden" name="amount" value="2.01">
+			<input type="hidden" name="currency_code" value="USD">
+			<input type="hidden" name="return" value="">
+			<input type="hidden" name="undefined_quantity" value="1">
+			<input type="image" src="http://i.imgur.com/zZ6lVrI.png" border="0" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
+		</fieldset>
+		</form>
 
 	</div>
-	</section>
-	</header>
-	</div>
+	</aside>
+	
 
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/minicart/3.0.5/minicart.min.js"></script>
 	<script>
